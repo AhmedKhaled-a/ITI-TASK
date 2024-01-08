@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <video id="vid" src="video/frozen.mp4"  style="width: 100%;"></video>
+        <div class="btns">
+            <input class="videoProgress" type="range" value="0" style="width: 90%;">
+            <span class="videoTime">0:00 / 0:00</span>
+            <button onclick="playPause()">play/pause</button>
+            <button onclick="jumbToStart()">&lt;&lt;</button>
+            <button onclick="backward()">&lt;</button>
+            <button onclick="forward()">&gt;</button>
+            <button onclick="jumbToEnd()">&gt;&gt;</button>
+            <input class="volume" type="range" name="" id="" min="0" max="1" value="1" step="0.05" style="vertical-align: middle;">
+            <button onclick="mute()">Mute</button>
+            <span>Speed</span>
+            <input class="speed" type="range" name="" id="" min="1" max="19" value="0" step=".5" style="vertical-align: middle;">
+            <button class="fullScreen">Full Screen</button>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colors</title>
+</head>
+
+<body>
+    <label>Red</label>
+    <input type="range"  id="redd" min="0" max="255" value="0" /><br />
+    <label>Green</label>
+    <input type="range"  id="greenn" min="0" max="255" value="0" /><br />
+    <label>Blue</label>
+    <input type="range"  id="bluee" min="0" max="255" value="0" />
+    <div id="cText">
+        <h1>CHANGE MY COLOR</h1>
+    </div>
+    
+    <script>
+
+        let red = document.getElementById("redd");
+        let green = document.getElementById("greenn");
+        let blue = document.getElementById("bluee");
+        let cText = document.getElementById("cText");
+
+        function changeColor(){
+            (cText.style.color = `rgb(${red.value}, ${green.value}, ${blue.value})`);
+        }
+        let colorRanges = document.querySelectorAll('input')
+
+        for (const range of colorRanges) {
+            range.addEventListener('change',()=>{
+                changeColor()
+            })
+        }
+    </script>
+</body>
+
+</html>
+
