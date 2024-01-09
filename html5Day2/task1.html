@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+    
+    <h1>HELLO</h1>
+    <h2></h2>
+    <button onclick="getloc()">get location</button>
+    <button onclick="clearWatch()">clear watch</button>
+    <iframe id="map" src="" height="300" width="300" title="map"></iframe>
+
+
+
+
+
+    
+    <script>
+        let id;
+        let frameMap = document.getElementById('map')
+        function getloc(){
+            id = navigator.geolocation.watchPosition(showpos);
+        }
+        function showpos (position){
+            // console.log(position);
+            let lat = position.coords.latitude;
+            let long = position.coords.longitude;
+            // console.log(lat,long);
+            // location.assign('http://maps.google.com/maps?q='+lat+',+'+long)
+            // frameMap.src = 'https://maps.google.com/maps/embed?q='+lat+',+'+long + '?enablejsapi=1'  
+            window.open('https://maps.google.com/maps?q='+lat+',+'+long)
+            document.querySelector('h2').innerHTML = `you are at latitude: ${lat} and longitude: ${long}`
+        }
+        function clearWatch(){
+            navigator.geolocation.clearWatch(id)
+
+        }
+    </script>
+</body>
+</html>
