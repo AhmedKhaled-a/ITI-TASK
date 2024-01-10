@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <form  class="w-75 mx-auto p-5 m-5 shadow-lg" id="myform" >
+        <input type="text" placeholder="user name" class="form-control mb-3" id="userName" required
+            pattern="^[A-Z][a-z]{3,9}$">
+        <p class="name-error">name should start with a capital and at least 3 letters</p>
+        <input type="text" placeholder="age" class="form-control mb-3" id="userAge" required
+            pattern="^(1[6-9]|[2-9]\d+|\d{3,})$">
+        <p class="age-error">age should be 16 or older</p>
+        <input type="submit"   class="btn btn-primary" value="submit">
+        <!-- <button onclick="addUser()" class="btn btn-primary">add</button> -->
+        <button onclick="clr()" class="btn btn-primary">clear</button>
+    </form>
+    <script src="form.js">
+    </script>
+</body>
+
+</html>
