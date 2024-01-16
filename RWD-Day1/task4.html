@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+
+        .container {
+            background-color: rgb(212, 205, 200);
+            width: 800px;
+            height: 700px;
+            margin: auto;
+            display: grid;
+            grid-template-areas:
+                "bla1 bla2 bla2"
+                "bla1 bla3 bla4"
+                "bla5 bla5 bla4";
+            /* transform: rotate(45deg); */
+            /* transition: all 1s; */
+            animation: rotate 4s infinite linear;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        .container>div {
+            text-align: center;
+            padding: 25px;
+            margin: 10px;
+            background-color: rgb(59, 87, 51);
+
+        }
+
+        .child1 {
+            grid-area: bla1;
+        }
+
+        .child2 {
+            grid-area: bla2;
+        }
+
+        .child3 {
+            grid-area: bla3;
+        }
+
+        .child4 {
+            grid-area: bla4;
+        }
+
+        .child5 {
+            grid-area: bla5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="child1">1</div>
+        <div class="child2">2</div>
+        <div class="child3">3</div>
+        <div class="child4">4</div>
+        <div class="child5">5</div>
+    </div>
+</body>
+
+</html>
