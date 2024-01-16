@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1-p.min.js"></script>
+    <style>
+        .card {
+            width: 200px;
+            border: 2px solid #CCC;
+            border-radius: 5px;
+            margin: 30px 10px 30px;
+            padding: 10px 20px;
+        }
+        .card img {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        .err {
+            display: none;
+            border: 2px solid red;
+            width: 30%;
+            padding: 10px 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="" alt="Productimage">
+        <hr>
+        <h2>Title</h2>
+        <p>Desc</p>
+    </div>
+    <input type="text" placeholder="enter product id">
+    <button id="get-data">get product</button>
+    <p class="err">Product isn't available</p>
+    
+    <script>
+        $('#get-data').on('click', function() {
+            let id = $('input').val();
+            $.ajax({
+                url: `https://dummyjson.com/products/${id}`,
+                success: function(product) {
+                    $('.err').css('display', 'none')
+                    $('.card img').attr('src', product['images'][0]);
+                    $('.card h2').text(product.title);
+                    $('.card p').text(product.description);
+                },
+                error: function() {
+                    $('.err').css('display', 'block')
+                }
+            })
+            $('input').val('');
+        })
+    </script>
+</body>
+</html>
